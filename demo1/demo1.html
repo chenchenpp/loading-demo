@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.title{
+				width: 100%;
+				text-align: center;
+				color: red;
+			}
+			.load1 {
+			  margin: 10px auto;
+			  width: auto;
+			  height: 60px;
+			  text-align: center;
+			  font-size: 10px;
+			}
+			.load1>div{
+				width: 10px;
+				height: 60px;
+				background: greenyellow;
+				display: inline-block;
+				animation: stretchdelay 1.2s infinite ease-in-out;
+			}
+			.load1 .rect2{
+				animation-delay: -1.0s;
+			}
+			.load1 .rect3{
+				animation-delay: -0.9s;
+			}
+			.load1 .rect4{
+				animation-delay: -0.8s;
+			}
+			.load1 .rect5{
+				animation-delay: -0.7s;
+			}
+			@keyframes stretchdelay{
+				0%,40%,100%{
+					transform: scaleY(0.4);
+				}
+				20%{
+					transform: scaleY(1.0);
+				}
+			}
+			.load2{
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+				margin: 10px auto;
+				animation: strangleTurn 2s infinite ease-in-out;
+			}
+			@keyframes strangleTurn{
+				0%{  transform: perspective(200px); }
+				50%{ transform: perspective(200px) rotateX(180deg);}
+				100%{ transform: perspective(200px) rotateX(180deg) rotateY(180deg); }
+				
+			}
+			.load3{
+				width: 100px;
+				height: 100px;
+				margin: 10px auto;
+				position: relative;
+			}
+			.load3>div{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background: greenyellow;
+				position: absolute;
+				animation: borderScale 2s infinite ease-in-out;
+			}
+			.load3 .rect1{
+				background: green;
+			}
+			.load3 .rect2{
+				animation-delay: -1.0s;
+			}
+			@keyframes borderScale{
+				0%,100%{transform: scale(0);}
+				50%{transform: scale(1);}
+			}
+			.load4{
+				width: 100px;
+				height: 100px;
+				margin: 10px auto;
+				position: relative;
+				
+			}
+			.load4>div{
+				width: 25px;
+				height: 25px;
+				background: greenyellow;
+				position: absolute;
+				animation: cubemove 2s infinite ease-in-out;
+			}
+			.load4 .rect2{
+				animation-delay: -1s;
+			}
+			@keyframes cubemove{
+				25%{transform: scale(1) translate(50px,0) rotate(90deg);}
+				50%{transform: scale(1.2) translate(50px,50px) rotate(180deg);}
+				75%{transform: scale(1) translate(0,50px) rotate(270deg)}
+				100%{transform: scale(1.2) translate(0,0) rotate(360deg)}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">波浪加载</div>
+		<div class="load1">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+		<div class="title">方块加载</div>
+		<div class="load2"></div>
+		<div class="title">圆圈加载</div>
+		<div class="load3">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+		</div>
+		<div class="title">方块转圈加载</div>
+		<div class="load4">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+		</div>
+	</body>
+</html>
