@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>加载。。。。</title>
 		<style type="text/css">
 			.title{
 				width: 100%;
@@ -103,6 +103,100 @@
 				75%{transform: scale(1) translate(0,50px) rotate(270deg)}
 				100%{transform: scale(1.2) translate(0,0) rotate(360deg)}
 			}
+			/* 进度条加载 */
+			.program-load{
+				width: 150px;
+				height: 4px;
+				position: relative;
+				margin: 10px auto;
+				background: lightgreen;
+				animation: changeBgColor 2s infinite ease-in-out alternate;
+			}
+			@keyframes changeBgColor{
+				0%{
+					background: blue
+				}
+				100%{
+					background: lightgreen
+				}
+			}
+			.program-load span{
+				display: inline-block;
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: lightblue;
+				top: -8px;
+				left: -10px;
+				animation: changePrograme 2s infinite ease-in-out alternate;
+			}
+			@keyframes changePrograme{
+				0%{
+					left: -10px;
+				}
+				100%{
+					left: 100%;
+				}
+			}
+			/* 圆圈过渡加载 */
+			.que-linear-load{
+				width: 200px;
+				height: 100px;
+				margin: 10px auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-around
+			}
+			.que-linear-load span{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: lightblue;
+				animation: fliterLinearLoad 1.2s infinite ease;
+			}
+			.que-linear-load span:nth-child(1){
+				animation-delay: -0.96s
+			}
+			.que-linear-load span:nth-child(2){
+				animation-delay: -0.72s
+			}
+			.que-linear-load span:nth-child(3){
+				animation-delay: -0.48s
+			}
+			.que-linear-load span:nth-child(4){
+				animation-delay: -0.24s
+			}
+			.que-linear-load span:nth-child(5){
+				animation-delay: 0s
+			}
+			@keyframes fliterLinearLoad{
+				0%{
+					opacity: 0;
+					transform: scale(1)
+				}
+				100%{
+					opacity: 1;
+					transform: scale(0)
+				}
+			}
+			/* 五个圆圈来回跳 */
+			.que2-linear-load{
+				width: 200px;
+				height: 100px;
+				margin: 10px auto;
+				position: relative;
+			}
+			.que2-linear-load span{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: lightblue;
+				position: absolute
+			}
+			@keyframes 
 		</style>
 	</head>
 	<body>
@@ -125,6 +219,26 @@
 		<div class="load4">
 			<div class="rect1"></div>
 			<div class="rect2"></div>
+		</div>
+		<div class="title">进度条加载</div>
+		<div class="program-load">
+			<span></span>
+		</div>
+		<div class="title">圆圈过渡加载</div>
+		<div class="que-linear-load">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="title">五个圆圈来回跳</div>
+		<div class="que2-linear-load">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 	</body>
 </html>
